@@ -1,0 +1,21 @@
+{
+  "Customer": {
+    "FullName": "John Doe",
+    "Address": "23 Aaron Hawkins Avenue, Charleston, Texas"
+  },
+  "DealInfo": {
+    "Type": "Fixed Deposit",
+    "Issuer": "Morgan Stanley",
+    "Currency": "USD",
+    "ReferenceNumber": "REF-1234567890",
+    "TransactionDate": "Thursday, 2 April 2024",
+    "StartDate": "Thursday, 2 May 2024",
+    "EndDate": "Monday, 27 January 2025",
+    "Duration": "270",
+    "NetRate": "17.88",
+    "Principal": 450000,
+    "ExpectedInterest": 70000,
+    "NetMaturityValue": 850000
+  },
+  "CompanyLogoUrl": "idBGtJQnXa/idINtDZZob.jpeg"
+}

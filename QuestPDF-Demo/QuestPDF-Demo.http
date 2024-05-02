@@ -1,0 +1,6 @@
+@QuestPDF_Demo_HostAddress = http://localhost:5221
+
+GET {{QuestPDF_Demo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
