@@ -13,4 +13,13 @@
 
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Assets\medical-logo.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\medical-logo2.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
