@@ -212,35 +212,37 @@ namespace QuestPDF_Demo.Services
             });
         }
 
+        static IContainer DefaultCellStyle(IContainer container, string backgroundColor = "")
+        {
+            return container
+                .Border(1)
+                .BorderColor(Colors.Grey.Lighten1)
+                .Background(!string.IsNullOrEmpty(backgroundColor) ? backgroundColor : Colors.White)
+                .PaddingVertical(7)
+                .PaddingHorizontal(3);
+        }
+
+        static IContainer EvaluateOutstandingBalanceBackgroundColor(IContainer container, double amountDue, double amountPaid)
+        {
+            if (amountDue - amountPaid > 0)
+            {
+                // this applies a grey background to the outstanding balance cell 
+                return container
+                .PaddingVertical(7)
+                .PaddingHorizontal(3)
+                .Background(Colors.Grey.Lighten2);
+            }
+
+            return DefaultCellStyle(container);
+        }
+
         static void ComposePharmacyReportContent(IContainer container)
         {
 
             var transactions = GetPharmacyReport();
             int serialNumber = 0;
 
-            IContainer DefaultCellStyle(IContainer container, string backgroundColor = "")
-            {
-                return container
-                    .Border(1)
-                    .BorderColor(Colors.Grey.Lighten1)
-                    .Background(!string.IsNullOrEmpty(backgroundColor) ? backgroundColor : Colors.White)
-                    .PaddingVertical(7)
-                    .PaddingHorizontal(3);
-            }
-
-            IContainer EvaluateOutstandingBalanceBackgroundColor(IContainer container, double amountDue, double amountPaid)
-            {
-                if (amountDue - amountPaid > 0)
-                {
-                    // this applies a grey background to the outstanding balance cell 
-                    return container
-                    .PaddingVertical(7)
-                    .PaddingHorizontal(3)
-                    .Background(Colors.Grey.Lighten2);
-                }
-
-                return DefaultCellStyle(container);
-            }
+            
 
             container.Column(mainContentColumn =>
             {
